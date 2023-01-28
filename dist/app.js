@@ -15,4 +15,9 @@ class Car {
         console.log(this.model + " Car is enabled");
     }
 }
+class Lombergine extends Car {
+    constructor(brand, model) {
+        super(brand, model);
+    }
+}
 const myCar = new Car("Ferrari", "JIP");

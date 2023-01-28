@@ -14,9 +14,14 @@ class Car {
         this.brand = brand;
         this.model = model;
     }
-    drive() {
+   drive() {
         console.log(this.model + " Car is enabled");
 
     }
 }
-const myCar = new Car("Ferrari", "JIP" );
+class Lombergine extends Car {
+    constructor(brand: string, model: string) {
+        super(brand, model);
+    }
+}
+const myCar = new Car("Ferrari", "JIP");
