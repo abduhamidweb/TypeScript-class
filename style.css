@@ -1,0 +1,218 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree:wght@400;600&family=Open+Sans:wght@400;700&family=Poppins:wght@600&family=Rubik:ital,wght@0,500;0,700;1,400&display=swap');
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  /* border: 1px solid red; */
+}
+:root {
+  --green: #fb32a4;
+}
+body {
+  background: linear-gradient(#02173f, #0a315e);
+  font-family: 'Open Sans', sans-serif;
+}
+.container {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+.container form {
+  flex: 0 1;
+  min-height: 300px;
+  min-width: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
+  column-gap: 10px;
+  background-color: #01163d;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  box-shadow: 1px 2px 13px -1px #01163d;
+}
+.container form h1 {
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 400;
+  margin-bottom: 1rem;
+}
+.container form .t-input {
+  position: relative;
+  width: 100%;
+}
+.container form .t-input input {
+  width: 100%;
+  min-height: 40px;
+  color: white;
+  background-color: transparent;
+  outline: none;
+  border: none;
+  /* border-bottom: 2px solid; */
+  font-size: 1rem;
+  font-weight: lighter;
+  position: relative;
+  white-space: 0.5;
+  caret-color: var(--green);
+}
+.container form .t-input input::placeholder {
+  opacity: 0;
+}
+.container form .t-input .b-line {
+  content: '';
+  position: absolute;
+  height: 2px;
+  width: 35%;
+  background: linear-gradient(90deg, var(--green) 0%, transparent 100%);
+  bottom: 0;
+  left: 0;
+  transition-duration: 300ms;
+}
+.container form .t-input input:not(:placeholder-shown) ~ .b-line,
+.container form .t-input:hover .b-line,
+.container form .t-input:focus-within .b-line {
+  background: linear-gradient(90deg, var(--green) 0%, transparent 100%);
+  width: 100%;
+}
+.container form .t-input label {
+  outline: none;
+}
+.container form .t-input:hover label {
+  color: var(--green);
+}
+.container form .t-input input + label {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  color: white;
+  transition-duration: 150ms;
+}
+.container form .t-input input:not(:placeholder-shown) + label,
+.container form .t-input input:focus + label {
+  font-size: 0.75rem;
+  transform: translateY(-180%);
+  -webkit-transform: translateY(-180%);
+  -moz-transform: translateY(-180%);
+  -ms-transform: translateY(-180%);
+  -o-transform: translateY(-180%);
+  color: var(--green);
+}
+.container form .check {
+  align-self: flex-start;
+  height: 30px;
+  position: relative;
+}
+.container form .check input {
+  appearance: none;
+}
+.container form .check input + label {
+  color: white;
+  font-size: 0.75rem;
+  padding-left: 1.5rem;
+  transition-duration: 100ms;
+}
+.container form .check input:focus + label,
+.container form .check input:checked + label {
+  color: var(--green);
+}
+.container form .check input:focus + label::before {
+  border-color: var(--green);
+}
+.container form .check input + label::before {
+  content: '';
+  position: absolute;
+  width: 1rem;
+  height: 1rem;
+  border: 2px solid white;
+  top: 50%;
+  transform: translateY(-60%);
+  -webkit-transform: translateY(-60%);
+  -moz-transform: translateY(-60%);
+  -ms-transform: translateY(-60%);
+  -o-transform: translateY(-60%);
+  transition-duration: 100ms;
+  left: 0;
+  outline: none;
+}
+.container form .check input:checked + label::before {
+  border: 2px solid var(--green);
+  width: 6px;
+  height: 0.9rem;
+  transform: translate(75%, -85%) rotate(45deg);
+  -webkit-transform: translate(75%, -85%) rotate(45deg);
+  -moz-transform: translate(75%, -85%) rotate(45deg);
+  -ms-transform: translate(75%, -85%) rotate(45deg);
+  -o-transform: translate(75%, -85%) rotate(45deg);
+  border-color: transparent var(--green) var(--green) transparent;
+}
+.container form .check input:checked + label:hover {
+  color: var(--green);
+  opacity: 0.5;
+}
+.container form .check input + label:hover::before {
+  border-color: var(--green);
+}
+.container form .check input:checked + label:hover::before {
+  border-color: transparent var(--green) var(--green) transparent;
+  opacity: 0.5;
+}
+.container form .check input + label:hover {
+  color: var(--green);
+}
+.container form button {
+  align-self: flex-end;
+  width: 100px;
+  height: 30px;
+  background: transparent;
+  position: relative;
+  font-size: 1rem;
+  border: none;
+  transition-duration: 300ms;
+  font-weight: 700;
+  border: 1px solid var(--green);
+  color: white;
+  z-index: 1;
+  border-radius: 2rem;
+  animation: neon 2s infinite linear;
+}
+.container form button:focus,
+.container form button:hover {
+  background: var(--green);
+  border: none;
+  outline: 1px solid var(--green);
+  color: white;
+  animation: none;
+  box-shadow: 0 0 20px 10px #fb32a4d1;
+}
+@keyframes neon {
+  0% {
+    background-color: var(--green);
+    box-shadow: 0 0 20px 10px #fb32a4d1;
+  }
+  5% {
+    background-color: transparent;
+  }
+  10% {
+    background-color: var(--green);
+  }
+  15% {
+    background-color: transparent;
+  }
+  20% {
+    background-color: var(--green);
+  }
+  25% {
+    background-color: transparent;
+  }
+}
